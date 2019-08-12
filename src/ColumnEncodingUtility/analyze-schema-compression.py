@@ -406,7 +406,7 @@ def get_count_raw_columns(schema_name, table_name):
     statement = '''select /* getting count of raw columns in table */ count(9) count_raw_columns
       from pg_table_def 
       where schemaname = '%s'
-        and lower(encoding) in ('raw','none') 
+        -- and lower(encoding) in ('raw','none') 
         and sortkey != 1        
         and tablename = '%s'
 ''' % (schema_name, table_name)
